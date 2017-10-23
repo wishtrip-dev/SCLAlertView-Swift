@@ -352,7 +352,7 @@ open class SCLAlertView: UIViewController {
     
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        let rv = self.parentView
+        let rv = self.appearance!.parentView
         let sz = rv.frame.size
         
         // Set background frame
@@ -708,7 +708,7 @@ open class SCLAlertView: UIViewController {
         view.alpha = 0
         view.tag = uniqueTag
         view.accessibilityIdentifier = uniqueAccessibilityIdentifier
-        let rv = self.parentView
+        let rv = self.appearance!.parentView
         rv.addSubview(view)
         view.frame = rv.bounds
         baseView.frame = rv.bounds
@@ -849,7 +849,7 @@ open class SCLAlertView: UIViewController {
     // Show animation in the alert view
     fileprivate func showAnimation(_ animationStyle: SCLAnimationStyle = .topToBottom, animationStartOffset: CGFloat = -400.0, boundingAnimationOffset: CGFloat = 15.0, animationDuration: TimeInterval = 0.2) {
         
-        let rv = self.parentView
+        let rv = self.appearance!.parentView
         var animationStartOrigin = self.baseView.frame.origin
         var animationCenter : CGPoint = rv.center
         
